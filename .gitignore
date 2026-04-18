@@ -1,0 +1,27 @@
+# Secrets — never commit these
+.env
+
+# Database (local data, regenerated on first run)
+*.db
+*.sqlite
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.Python
+*.egg-info/
+dist/
+build/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Logs
+logs/
+*.log
+
+# macOS
+.DS_Store
