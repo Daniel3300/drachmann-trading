@@ -8,9 +8,20 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
+def _secret(key: str, default: str = "") -> str:
+    """Read from .env locally, or Streamlit Cloud secrets when deployed."""
+    val = os.getenv(key, "")
+    if not val:
+        try:
+            import streamlit as st
+            val = st.secrets.get(key, default)
+        except Exception:
+            val = default
+    return val or default
+
 # ── Telegram ──────────────────────────────────────────────────────────────────
-TELEGRAM_TOKEN = os.getenv("TELEGRAM_TOKEN", "")
-TELEGRAM_CHAT_ID = os.getenv("TELEGRAM_CHAT_ID", "")
+TELEGRAM_TOKEN = _secret("TELEGRAM_TOKEN")
+TELEGRAM_CHAT_ID = _secret("TELEGRAM_CHAT_ID")
 
 # ── Signal Thresholds ─────────────────────────────────────────────────────────
 STRONG_BUY_THRESHOLD = int(os.getenv("STRONG_BUY_THRESHOLD", "80"))
