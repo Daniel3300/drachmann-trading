@@ -39,7 +39,14 @@ st.markdown("""
 <style>
 /* ── Sidebar ─────────────────────────────────────────────── */
 section[data-testid="stSidebar"] {
-    border-right: 1px solid rgba(128,128,128,0.15) !important;
+    background: #0d1117 !important;
+    border-right: 1px solid #1e2535 !important;
+}
+section[data-testid="stSidebar"] * {
+    color: #c9d1d9 !important;
+}
+section[data-testid="stSidebar"] [data-testid="stRadio"] label:has(input:checked) {
+    color: #3b82f6 !important;
 }
 
 /* ── Nav radio (icon-prefixed via CSS) ───────────────────── */
@@ -268,9 +275,9 @@ with st.sidebar:
     )
 
     page = st.radio(
-        "nav",
+        "Navigation",
         ["Overview", "Stock Detail", "Signal Log", "Settings"],
-        label_visibility="collapsed",
+        label_visibility="hidden",
     )
 
     st.divider()
