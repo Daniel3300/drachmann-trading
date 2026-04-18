@@ -768,6 +768,14 @@ elif page == "Signal Log":
 # SETTINGS
 # ─────────────────────────────────────────────────────────────────────────────
 elif page == "Settings":
+    # Password gate — stored in Streamlit secrets as ADMIN_PASSWORD
+    _admin_pw = config._secret("ADMIN_PASSWORD", "")
+    if _admin_pw:
+        _entered = st.text_input("Admin password", type="password", placeholder="Enter password to access settings")
+        if _entered != _admin_pw:
+            st.warning("Enter the admin password to access settings.")
+            st.stop()
+
     st.markdown(icons.page_header(
         icons.settings_gear(22, "#3b82f6"),
         "Settings & Alerts",
