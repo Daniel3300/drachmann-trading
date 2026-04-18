@@ -192,6 +192,6 @@ def page_header(icon_svg: str, title: str, subtitle: str = "") -> str:
         f'<div style="display:flex;align-items:center;gap:12px;margin-bottom:8px;">'
         f'<div style="padding:10px;background:rgba(59,130,246,0.12);border-radius:10px;'
         f'border:1px solid rgba(59,130,246,0.2);">{icon_svg}</div>'
-        f'<div><h1 style="margin:0;font-size:26px;font-weight:700;color:#f1f5f9;">'
+        f'<div><h1 style="margin:0;font-size:26px;font-weight:700;">'
         f'{title}</h1>{sub}</div></div>'
     )

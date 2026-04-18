@@ -39,12 +39,7 @@ st.markdown("""
 <style>
 /* ── Sidebar ─────────────────────────────────────────────── */
 section[data-testid="stSidebar"] {
-    background: #0d1117 !important;
-    border-right: 1px solid #1e2535 !important;
-}
-section[data-testid="stSidebar"] .stMarkdown p {
-    color: #94a3b8;
-    font-size: 12px;
+    border-right: 1px solid rgba(128,128,128,0.15) !important;
 }
 
 /* ── Nav radio (icon-prefixed via CSS) ───────────────────── */
@@ -55,16 +50,14 @@ section[data-testid="stSidebar"] .stMarkdown p {
     align-items: center !important;
     padding: 10px 14px !important;
     border-radius: 8px !important;
-    transition: background 0.15s, color 0.15s !important;
+    transition: background 0.15s !important;
     margin: 2px 0 !important;
     font-size: 14px !important;
-    color: #94a3b8 !important;
     font-weight: 400 !important;
     cursor: pointer !important;
 }
 [data-testid="stRadio"] label:hover {
     background: rgba(59,130,246,0.08) !important;
-    color: #e2e8f0 !important;
 }
 [data-testid="stRadio"] label:has(input:checked) {
     background: rgba(59,130,246,0.13) !important;
@@ -90,7 +83,7 @@ section[data-testid="stSidebar"] .stMarkdown p {
 
 /* 1 — Overview: bar chart */
 [data-testid="stRadio"] > div > label:nth-child(1)::before {
-    background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%2394a3b8' stroke-width='1.75' stroke-linecap='round' stroke-linejoin='round'><line x1='18' y1='20' x2='18' y2='10'/><line x1='12' y1='20' x2='12' y2='4'/><line x1='6' y1='20' x2='6' y2='14'/></svg>");
+    background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23666666' stroke-width='1.75' stroke-linecap='round' stroke-linejoin='round'><line x1='18' y1='20' x2='18' y2='10'/><line x1='12' y1='20' x2='12' y2='4'/><line x1='6' y1='20' x2='6' y2='14'/></svg>");
 }
 [data-testid="stRadio"] > div > label:nth-child(1):has(input:checked)::before {
     background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%233b82f6' stroke-width='1.75' stroke-linecap='round' stroke-linejoin='round'><line x1='18' y1='20' x2='18' y2='10'/><line x1='12' y1='20' x2='12' y2='4'/><line x1='6' y1='20' x2='6' y2='14'/></svg>");
@@ -98,7 +91,7 @@ section[data-testid="stSidebar"] .stMarkdown p {
 
 /* 2 — Stock Detail: search */
 [data-testid="stRadio"] > div > label:nth-child(2)::before {
-    background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%2394a3b8' stroke-width='1.75' stroke-linecap='round' stroke-linejoin='round'><circle cx='11' cy='11' r='8'/><path d='m21 21-4.35-4.35'/></svg>");
+    background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23666666' stroke-width='1.75' stroke-linecap='round' stroke-linejoin='round'><circle cx='11' cy='11' r='8'/><path d='m21 21-4.35-4.35'/></svg>");
 }
 [data-testid="stRadio"] > div > label:nth-child(2):has(input:checked)::before {
     background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%233b82f6' stroke-width='1.75' stroke-linecap='round' stroke-linejoin='round'><circle cx='11' cy='11' r='8'/><path d='m21 21-4.35-4.35'/></svg>");
@@ -106,7 +99,7 @@ section[data-testid="stSidebar"] .stMarkdown p {
 
 /* 3 — Signal Log: radio waves */
 [data-testid="stRadio"] > div > label:nth-child(3)::before {
-    background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%2394a3b8' stroke-width='1.75' stroke-linecap='round' stroke-linejoin='round'><path d='M4.9 19.1C1 15.2 1 8.8 4.9 4.9'/><path d='M7.8 16.2c-2.3-2.3-2.3-6.1 0-8.5'/><circle cx='12' cy='12' r='2'/><path d='M16.2 7.8c2.3 2.3 2.3 6.1 0 8.5'/><path d='M19.1 4.9C23 8.8 23 15.1 19.1 19'/></svg>");
+    background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23666666' stroke-width='1.75' stroke-linecap='round' stroke-linejoin='round'><path d='M4.9 19.1C1 15.2 1 8.8 4.9 4.9'/><path d='M7.8 16.2c-2.3-2.3-2.3-6.1 0-8.5'/><circle cx='12' cy='12' r='2'/><path d='M16.2 7.8c2.3 2.3 2.3 6.1 0 8.5'/><path d='M19.1 4.9C23 8.8 23 15.1 19.1 19'/></svg>");
 }
 [data-testid="stRadio"] > div > label:nth-child(3):has(input:checked)::before {
     background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%233b82f6' stroke-width='1.75' stroke-linecap='round' stroke-linejoin='round'><path d='M4.9 19.1C1 15.2 1 8.8 4.9 4.9'/><path d='M7.8 16.2c-2.3-2.3-2.3-6.1 0-8.5'/><circle cx='12' cy='12' r='2'/><path d='M16.2 7.8c2.3 2.3 2.3 6.1 0 8.5'/><path d='M19.1 4.9C23 8.8 23 15.1 19.1 19'/></svg>");
@@ -114,7 +107,7 @@ section[data-testid="stSidebar"] .stMarkdown p {
 
 /* 4 — Settings: sliders */
 [data-testid="stRadio"] > div > label:nth-child(4)::before {
-    background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%2394a3b8' stroke-width='1.75' stroke-linecap='round' stroke-linejoin='round'><line x1='4' y1='21' x2='4' y2='14'/><line x1='4' y1='10' x2='4' y2='3'/><line x1='12' y1='21' x2='12' y2='12'/><line x1='12' y1='8' x2='12' y2='3'/><line x1='20' y1='21' x2='20' y2='16'/><line x1='20' y1='12' x2='20' y2='3'/><line x1='1' y1='14' x2='7' y2='14'/><line x1='9' y1='8' x2='15' y2='8'/><line x1='17' y1='16' x2='23' y2='16'/></svg>");
+    background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23666666' stroke-width='1.75' stroke-linecap='round' stroke-linejoin='round'><line x1='4' y1='21' x2='4' y2='14'/><line x1='4' y1='10' x2='4' y2='3'/><line x1='12' y1='21' x2='12' y2='12'/><line x1='12' y1='8' x2='12' y2='3'/><line x1='20' y1='21' x2='20' y2='16'/><line x1='20' y1='12' x2='20' y2='3'/><line x1='1' y1='14' x2='7' y2='14'/><line x1='9' y1='8' x2='15' y2='8'/><line x1='17' y1='16' x2='23' y2='16'/></svg>");
 }
 [data-testid="stRadio"] > div > label:nth-child(4):has(input:checked)::before {
     background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%233b82f6' stroke-width='1.75' stroke-linecap='round' stroke-linejoin='round'><line x1='4' y1='21' x2='4' y2='14'/><line x1='4' y1='10' x2='4' y2='3'/><line x1='12' y1='21' x2='12' y2='12'/><line x1='12' y1='8' x2='12' y2='3'/><line x1='20' y1='21' x2='20' y2='16'/><line x1='20' y1='12' x2='20' y2='3'/><line x1='1' y1='14' x2='7' y2='14'/><line x1='9' y1='8' x2='15' y2='8'/><line x1='17' y1='16' x2='23' y2='16'/></svg>");
@@ -122,20 +115,17 @@ section[data-testid="stSidebar"] .stMarkdown p {
 
 /* ── Metric cards ────────────────────────────────────────── */
 [data-testid="stMetric"] {
-    background: #111827 !important;
-    border: 1px solid #1e2d45 !important;
+    border: 1px solid rgba(128,128,128,0.15) !important;
     border-radius: 12px !important;
     padding: 16px 20px !important;
 }
 [data-testid="stMetricLabel"] p {
-    color: #64748b !important;
     font-size: 11px !important;
     text-transform: uppercase !important;
     letter-spacing: 0.07em !important;
     font-weight: 500 !important;
 }
 [data-testid="stMetricValue"] {
-    color: #f1f5f9 !important;
     font-size: 22px !important;
     font-weight: 700 !important;
 }
@@ -156,38 +146,26 @@ section[data-testid="stSidebar"] .stMarkdown p {
 .stButton > button[kind="primary"]:hover {
     background: #2563eb !important;
 }
-.stButton > button:not([kind="primary"]) {
-    background: #111827 !important;
-    border: 1px solid #1e2d45 !important;
-    color: #e2e8f0 !important;
-}
-.stButton > button:not([kind="primary"]):hover {
-    background: #1a2540 !important;
-    border-color: #3b82f6 !important;
-}
 
 /* ── DataFrame ────────────────────────────────────────────── */
 [data-testid="stDataFrame"] {
-    border: 1px solid #1e2d45 !important;
+    border: 1px solid rgba(128,128,128,0.15) !important;
     border-radius: 12px !important;
     overflow: hidden !important;
 }
 
 /* ── Expander ─────────────────────────────────────────────── */
 [data-testid="stExpander"] {
-    background: #111827 !important;
-    border: 1px solid #1e2d45 !important;
+    border: 1px solid rgba(128,128,128,0.15) !important;
     border-radius: 10px !important;
 }
 [data-testid="stExpander"] summary {
     font-size: 13px !important;
     font-weight: 500 !important;
-    color: #e2e8f0 !important;
 }
 
 /* ── Divider ──────────────────────────────────────────────── */
 hr {
-    border-color: #1e2535 !important;
     margin: 18px 0 !important;
 }
 
@@ -325,7 +303,7 @@ if page == "Overview":
     st.markdown(icons.page_header(
         icons.bar_chart(22, "#3b82f6"),
         "Value Investing Overview",
-        "Løgstrup Score (0–100): P/E · P/B · ROE · FCF Yield · Dividend · Debt/Equity",
+        "Score (0–100): P/E · P/B · ROE · FCF Yield · Dividend · Debt/Equity",
     ), unsafe_allow_html=True)
 
     if df.empty:
@@ -381,7 +359,7 @@ if page == "Overview":
             ],
             text="score",
             labels={"score": "Score", "ticker": ""},
-            title=f"Top {len(top)} — Løgstrup Score",
+            title=f"Top {len(top)} — Score",
         )
         fig.update_traces(texttemplate="%{text:.0f}", textposition="outside",
                           marker_line_width=0)
@@ -500,7 +478,7 @@ elif page == "Stock Detail":
     # ── Company header ─────────────────────────────────────────────────────────
     st.markdown(
         f'<div style="margin:12px 0 20px;">'
-        f'<h2 style="margin:0;font-size:22px;font-weight:700;color:#f1f5f9;">{company}</h2>'
+        f'<h2 style="margin:0;font-size:22px;font-weight:700;">{company}</h2>'
         f'<div style="display:flex;align-items:center;gap:8px;margin-top:6px;">'
         f'<code style="font-size:12px;">{selected}</code>'
         f'<span style="color:#374151;">·</span>'
@@ -513,7 +491,7 @@ elif page == "Stock Detail":
 
     # ── KPI strip ─────────────────────────────────────────────────────────────
     kk = st.columns(7)
-    kk[0].metric("Løgstrup Score", f"{score:.0f} / 100")
+    kk[0].metric("Score", f"{score:.0f} / 100")
     kk[1].metric("P/E",           _num(detail.get("pe"), 1, " x"))
     kk[2].metric("P/B",           _num(detail.get("pb"), 2, " x"))
     kk[3].metric("ROE",           _pct(detail.get("roe")))
@@ -528,7 +506,7 @@ elif page == "Stock Detail":
     # ── Left: charts ──────────────────────────────────────────────────────────
     with left:
         st.markdown(
-            f'<p style="font-size:13px;font-weight:600;color:#e2e8f0;margin-bottom:8px;">'
+            f'<p style="font-size:13px;font-weight:600;margin-bottom:8px;">'
             f'{icons.activity(14,"#3b82f6")} Price History</p>',
             unsafe_allow_html=True,
         )
@@ -586,8 +564,8 @@ elif page == "Stock Detail":
 
         # ── Score history ───────────────────────────────────────────────────
         st.markdown(
-            f'<p style="font-size:13px;font-weight:600;color:#e2e8f0;margin:12px 0 8px;">'
-            f'{icons.award(14,"#3b82f6")} Løgstrup Score — 90-day History</p>',
+            f'<p style="font-size:13px;font-weight:600;margin:12px 0 8px;">'
+            f'{icons.award(14,"#3b82f6")} Score — 90-day History</p>',
             unsafe_allow_html=True,
         )
         sh = load_score_hist(selected)
@@ -620,7 +598,7 @@ elif page == "Stock Detail":
     # ── Right: score breakdown + fundamentals ─────────────────────────────────
     with right:
         st.markdown(
-            f'<p style="font-size:13px;font-weight:600;color:#e2e8f0;margin-bottom:8px;">'
+            f'<p style="font-size:13px;font-weight:600;margin-bottom:8px;">'
             f'{icons.target(14,"#3b82f6")} Score Breakdown</p>',
             unsafe_allow_html=True,
         )
@@ -673,7 +651,7 @@ elif page == "Stock Detail":
                 f'<div style="display:flex;justify-content:space-between;'
                 f'font-size:12px;color:#94a3b8;margin-bottom:4px;">'
                 f'<span>{name}</span>'
-                f'<span style="color:#e2e8f0;font-weight:600;">{disp} '
+                f'<span style="font-weight:600;">{disp} '
                 f'<span style="color:{bar_color};">{pts:.0f}</span>/{maxp}</span>'
                 f'</div>'
                 f'<div style="background:#1e2535;border-radius:4px;height:5px;">'
@@ -687,7 +665,7 @@ elif page == "Stock Detail":
 
         # Fundamentals
         st.markdown(
-            f'<p style="font-size:13px;font-weight:600;color:#e2e8f0;margin-bottom:8px;">'
+            f'<p style="font-size:13px;font-weight:600;margin-bottom:8px;">'
             f'{icons.info_icon(14,"#3b82f6")} Key Fundamentals</p>',
             unsafe_allow_html=True,
         )
@@ -710,7 +688,7 @@ elif page == "Stock Detail":
         for label, value in rows:
             la, va = st.columns([1.6, 1])
             la.markdown(f'<span style="font-size:12px;color:#64748b;">{label}</span>', unsafe_allow_html=True)
-            va.markdown(f'<span style="font-size:12px;color:#e2e8f0;">{value}</span>', unsafe_allow_html=True)
+            va.markdown(f'<span style="font-size:12px;">{value}</span>', unsafe_allow_html=True)
 
         if detail.get("description"):
             with st.expander("Business description"):
@@ -791,7 +769,7 @@ elif page == "Settings":
 
     # ── Telegram ─────────────────────────────────────────────────────────────
     st.markdown(
-        f'<p style="font-size:14px;font-weight:600;color:#e2e8f0;margin-bottom:10px;">'
+        f'<p style="font-size:14px;font-weight:600;margin-bottom:10px;">'
         f'{icons.send_icon(14,"#3b82f6")} Telegram Bot</p>',
         unsafe_allow_html=True,
     )
@@ -827,7 +805,7 @@ TELEGRAM_CHAT_ID=123456789
 
     # ── Thresholds ────────────────────────────────────────────────────────────
     st.markdown(
-        f'<p style="font-size:14px;font-weight:600;color:#e2e8f0;margin-bottom:10px;">'
+        f'<p style="font-size:14px;font-weight:600;margin-bottom:10px;">'
         f'{icons.target(14,"#3b82f6")} Score Thresholds</p>',
         unsafe_allow_html=True,
     )
@@ -840,7 +818,7 @@ TELEGRAM_CHAT_ID=123456789
 
     # ── Manual update ─────────────────────────────────────────────────────────
     st.markdown(
-        f'<p style="font-size:14px;font-weight:600;color:#e2e8f0;margin-bottom:10px;">'
+        f'<p style="font-size:14px;font-weight:600;margin-bottom:10px;">'
         f'{icons.refresh_cw(14,"#3b82f6")} Manual Update</p>',
         unsafe_allow_html=True,
     )
@@ -862,7 +840,7 @@ TELEGRAM_CHAT_ID=123456789
 
     # ── Cron ──────────────────────────────────────────────────────────────────
     st.markdown(
-        f'<p style="font-size:14px;font-weight:600;color:#e2e8f0;margin-bottom:10px;">'
+        f'<p style="font-size:14px;font-weight:600;margin-bottom:10px;">'
         f'{icons.clock_icon(14,"#3b82f6")} Automated Scheduling</p>',
         unsafe_allow_html=True,
     )
@@ -880,7 +858,7 @@ Find your Python path: `which python3`
 
     # ── Tickers ───────────────────────────────────────────────────────────────
     st.markdown(
-        f'<p style="font-size:14px;font-weight:600;color:#e2e8f0;margin-bottom:10px;">'
+        f'<p style="font-size:14px;font-weight:600;margin-bottom:10px;">'
         f'{icons.layers(14,"#3b82f6")} Configured Tickers</p>',
         unsafe_allow_html=True,
     )
