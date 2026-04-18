@@ -282,7 +282,7 @@ with st.sidebar:
 
     st.divider()
 
-    if st.button("Refresh All Data", use_container_width=True):
+    if st.button("Refresh All Data", width="stretch"):
         with st.spinner("Fetching fresh data … (~2 min)"):
             sigs = run_update(send_telegram=False)
         st.success(f"Done — {len(sigs)} signal(s).")
@@ -379,7 +379,7 @@ if page == "Overview":
             title=dict(font=dict(size=14, color="#e2e8f0")),
             margin=dict(l=0, r=0, t=40, b=0),
         )
-        st.plotly_chart(fig, use_container_width=True)
+        st.plotly_chart(fig, width="stretch")
 
     with ch2:
         sig_counts = df["signal"].value_counts()
@@ -403,7 +403,7 @@ if page == "Overview":
             legend=dict(orientation="h", y=-0.15, font=dict(size=11)),
             margin=dict(l=0, r=0, t=40, b=0),
         )
-        st.plotly_chart(fig_pie, use_container_width=True)
+        st.plotly_chart(fig_pie, width="stretch")
 
     # ── Table ─────────────────────────────────────────────────────────────────
     st.markdown(
@@ -432,7 +432,7 @@ if page == "Overview":
 
     st.dataframe(
         display,
-        use_container_width=True,
+        width="stretch",
         height=520,
         column_config={
             "Score":        st.column_config.ProgressColumn("Score", min_value=0, max_value=100, format="%.0f"),
@@ -551,7 +551,7 @@ elif page == "Stock Detail":
                 yaxis=dict(gridcolor="#1e2535", zeroline=False),
                 margin=dict(l=0, r=0, t=30, b=0),
             )
-            st.plotly_chart(fig_c, use_container_width=True)
+            st.plotly_chart(fig_c, width="stretch")
 
             fig_v = go.Figure(go.Bar(
                 x=hist.index, y=hist["Volume"],
@@ -565,7 +565,7 @@ elif page == "Stock Detail":
                 xaxis=dict(showticklabels=False, showgrid=False),
                 yaxis=dict(showticklabels=False, showgrid=False),
             )
-            st.plotly_chart(fig_v, use_container_width=True)
+            st.plotly_chart(fig_v, width="stretch")
         else:
             st.warning("Price history unavailable for this ticker.")
 
@@ -598,7 +598,7 @@ elif page == "Stock Detail":
                 font=dict(color="#94a3b8", size=11), showlegend=False,
                 margin=dict(l=0, r=0, t=10, b=0),
             )
-            st.plotly_chart(fig_sh, use_container_width=True)
+            st.plotly_chart(fig_sh, width="stretch")
         else:
             st.info("Score history builds up after multiple daily refreshes.")
 
@@ -632,7 +632,7 @@ elif page == "Stock Detail":
             paper_bgcolor="rgba(0,0,0,0)",
             margin=dict(l=20, r=20, t=20, b=20),
         )
-        st.plotly_chart(fig_r, use_container_width=True)
+        st.plotly_chart(fig_r, width="stretch")
 
         # Component bars
         for name, comp in components.items():
@@ -831,13 +831,13 @@ TELEGRAM_CHAT_ID=123456789
     )
     m1, m2 = st.columns(2)
     with m1:
-        if st.button("Update data — no alerts", use_container_width=True):
+        if st.button("Update data — no alerts", width="stretch"):
             with st.spinner("Fetching all tickers …"):
                 sigs = run_update(send_telegram=False)
             st.success(f"Done — {len(sigs)} signal(s).")
             st.cache_data.clear()
     with m2:
-        if st.button("Update + Send Telegram alerts", type="primary", use_container_width=True):
+        if st.button("Update + Send Telegram alerts", type="primary", width="stretch"):
             with st.spinner("Fetching and alerting …"):
                 sigs = run_update(send_telegram=True)
             st.success(f"Done — {len(sigs)} alert(s) sent.")

@@ -69,7 +69,6 @@ MIDCAP_TICKERS = [
     "AURI-B.CO",   # Auriga Industries B
     "FFARMS.CO",   # Fjord Seafood/Nordic Aquafarms
     "GRIF.CO",     # Grif Holding
-    "TAPEJ.CO",    # Tapejara
     "VGN.CO",      # Vestjysk Bank
 ]
 
